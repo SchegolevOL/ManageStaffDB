@@ -26,6 +26,7 @@ namespace ManageStaffDB.App.View
             InitializeComponent();
             DataManageVM.SelectedDepartment = departmentToEdit;
             DataManageVM.DepartmentName = departmentToEdit.Name;
+            EditDepartmrnt.Text = departmentToEdit.Name;
         }
     }
 }

@@ -21,17 +21,18 @@
                     VerticalAlignment="Center"
                     Width="250">
             <TextBlock Text="New Name"/>
-            <TextBox Text="{Binding PositionName}"/>
+            <TextBox x:Name="EditPositionName" Text="{Binding PositionName}"/>
             <TextBlock Text="New Salary"/>
-            <TextBox Text="{Binding PositionSalary}"
+            <TextBox x:Name="EditPositionSalary" Text="{Binding PositionSalary}"
                      PreviewTextInput="PreviewTextInput"/>
             <TextBlock Text="New Max of vacancies"/>
-            <TextBox Text="{Binding PositionMaxNumber}" 
+            <TextBox x:Name="EditPositionMaxOfVacancie" Text="{Binding PositionMaxNumber}" 
                      PreviewTextInput="PreviewTextInput"/>
             <TextBlock Text="New Department"/>
-            <ComboBox ItemsSource="{Binding AllDepartments}"
-                      SelectedItem="{Binding PositionDepartment}"
-                      DisplayMemberPath="Name"/>
+            <ComboBox  x:Name="EditPositionDepartment" 
+                       ItemsSource="{Binding AllDepartments}"
+                       SelectedItem="{Binding PositionDepartment}"
+                       DisplayMemberPath="Name"/>
         </StackPanel>
         <Button Grid.Row="1" 
                 Content="Edit Position" 

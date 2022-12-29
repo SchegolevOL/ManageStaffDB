@@ -17,9 +17,9 @@
         </Grid.RowDefinitions>
         <TabControl 
             SelectedItem="{Binding SelectedTabItem}">
-            <TabItem Name="UserTab">
+            <TabItem Name="UsersTab">
                 <TabItem.Header>
-                    <TextBlock Text="Staff"/>
+                    <TextBlock Text="Персонал"/>
                 </TabItem.Header>
                 <TabItem.ContextMenu>
                     <ContextMenu>
@@ -32,25 +32,31 @@
                           SelectedItem="{Binding SelectedUser}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Name"
-                                            DisplayMemberBinding="{Binding Name}"/>
-                            <GridViewColumn Header="SurName"
-                                            DisplayMemberBinding="{Binding SurName}"/>
-                            <GridViewColumn Header="Phone"
-                                            DisplayMemberBinding="{Binding Phone}"/>
-                            <GridViewColumn Header="Salary"
-                                            DisplayMemberBinding="{Binding UserPosition.Salery}"/>
-                            <GridViewColumn Header="Position"
-                                            DisplayMemberBinding="{Binding UserPosition.Name}"/>
-                            <GridViewColumn Header="Department"
-                                            DisplayMemberBinding="{Binding UserPosition.PositionDepartment.Name}"/>
+                            <GridViewColumn Header="Имя"
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="80"/>
+                            <GridViewColumn Header="Фамилия"
+                                            DisplayMemberBinding="{Binding SurName}"
+                                            Width="100"/>
+                            <GridViewColumn Header="Телефон"
+                                            DisplayMemberBinding="{Binding Phone}"
+                                            Width="100"/>
+                            <GridViewColumn Header="Зароботная плата"
+                                            DisplayMemberBinding="{Binding UserPosition.Salery}"
+                                            Width="120"/>
+                            <GridViewColumn Header="Должность"
+                                            DisplayMemberBinding="{Binding UserPosition.Name}"
+                                            Width="120"/>
+                            <GridViewColumn Header="Подразделение"
+                                            DisplayMemberBinding="{Binding UserPosition.PositionDepartment.Name}"
+                                            Width="150"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
             </TabItem>
             <TabItem Name="PositionsTab">
                 <TabItem.Header>
-                    <TextBlock Text="Positions"/>
+                    <TextBlock Text="Должности"/>
                 </TabItem.Header>
                 <TabItem.ContextMenu>
                     <ContextMenu>
@@ -63,23 +69,28 @@
                           SelectedItem="{Binding SelectedPosition}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Name"
-                                            DisplayMemberBinding="{Binding Name}"/>
-                            <GridViewColumn Header="Salary"
-                                            DisplayMemberBinding="{Binding Salery}"/>
-                            <GridViewColumn Header="Cont of staffs"
-                                            DisplayMemberBinding="{Binding PositionUsers.Count}"/>
-                            <GridViewColumn Header="Max number"
-                                            DisplayMemberBinding="{Binding MaxNumber}"/>
-                            <GridViewColumn Header="Department"
-                                            DisplayMemberBinding="{Binding PositionDepartment.Name}"/>
+                            <GridViewColumn Header="Название должности"
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="150"/>
+                            <GridViewColumn Header="Зароботная плата"
+                                            DisplayMemberBinding="{Binding Salery}"
+                                            Width="120"/>
+                            <GridViewColumn Header="Колличество сотрудников"
+                                            DisplayMemberBinding="{Binding PositionUsers.Count}"
+                                            Width="150"/>
+                            <GridViewColumn Header="Максимальное колличество сотрудников"
+                                            DisplayMemberBinding="{Binding MaxNumber}"
+                                            Width="250"/>
+                            <GridViewColumn Header="Подраздиление"
+                                            DisplayMemberBinding="{Binding PositionDepartment.Name}"
+                                            Width="100"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
             </TabItem>
             <TabItem Name="DepartmentsTab">
                 <TabItem.Header>
-                    <TextBlock Text="Departments"/>
+                    <TextBlock Text="Подразделение"/>
                 </TabItem.Header>
                 <TabItem.ContextMenu>
                     <ContextMenu>
@@ -92,9 +103,10 @@
                           SelectedItem="{Binding SelectedDepartment}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Name" 
-                                            DisplayMemberBinding="{Binding Name}"/>
-                            <GridViewColumn Header="Count of position" 
+                            <GridViewColumn Header="Название" 
+                                            DisplayMemberBinding="{Binding Name}"
+                                            Width="150"/>
+                            <GridViewColumn Header="Количество позиций" 
                                             DisplayMemberBinding="{Binding DepartmentPositions.Count }"/>
                         </GridView>
                     </ListView.View>
@@ -103,9 +115,9 @@
         </TabControl>
         <StackPanel Grid.Row="1" Orientation="Horizontal"
             HorizontalAlignment="Right">
-            <Button Content="Новый сотрудник" Command="{Binding OpenAddnewUserWnd}"/>
+            <Button Content="Новый сотрудник" Command="{Binding OpenAddNewUserWnd}"/>
             <Button Content="Новая позиция" Command="{Binding OpenAddNewPositionWnd}"/>
-            <Button Content="Новый отдел" Command="{Binding OpenAddnewDepartmentWnd}"/>
+            <Button Content="Новый отдел" Command="{Binding OpenAddNewDepartmentWnd}"/>
 
         </StackPanel>
     </Grid>

@@ -21,16 +21,16 @@
                     VerticalAlignment="Center"
                     Width="250">
             <TextBlock Text="New Name"/>
-            <TextBox Text="{Binding UserName}"/>
+            <TextBox x:Name="EditName" Text="{Binding UserName}"/>
             <TextBlock Text="New SurName"/>
-            <TextBox Text="{Binding UserSurName}"/>
+            <TextBox x:Name="EditSurName" Text="{Binding UserSurName}"/>
             <TextBlock Text="New Phone"/>
-            <TextBox Text="{Binding UserPhone}"
+            <TextBox x:Name="EditPhone"
+                Text="{Binding UserPhone}"
                      PreviewTextInput="PreviewTextInput"/>
-            <TextBlock Text="New Max of vacancies"/>
-            <TextBox Text="{Binding PositionMaxNumber}"/>
             <TextBlock Text="New Position"/>
-            <ComboBox ItemsSource="{Binding AllPositions}"
+            <ComboBox x:Name="EditPosition"
+                ItemsSource="{Binding AllPositions}"
                       DisplayMemberPath="Name"
                       SelectedItem="{Binding UserPosition}"/>
         </StackPanel>

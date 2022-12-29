@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ManageStaffDB.App.ViewModel;
 
 namespace ManageStaffDB.App.View
 {
@@ -22,7 +23,13 @@ namespace ManageStaffDB.App.View
     {
         public AddNewUserWindow()
         {
+            DataManageVM.UserName = null;
+            DataManageVM.UserSurName = null;
+            DataManageVM.UserPosition = null;
+            DataManageVM.UserPhone = null;
             InitializeComponent();
+            
+
         }
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

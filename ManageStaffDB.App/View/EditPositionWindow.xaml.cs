@@ -29,6 +29,10 @@ namespace ManageStaffDB.App.View
             DataManageVM.PositionName = positionToEdit.Name;
             DataManageVM.PositionMaxNumber = positionToEdit.MaxNumber;
             DataManageVM.PositionSalary = positionToEdit.Salery;
+            EditPositionName.Text = positionToEdit.Name;
+            EditPositionSalary.Text = positionToEdit.Salery.ToString();
+            EditPositionMaxOfVacancie.Text = positionToEdit.MaxNumber.ToString();
+            EditPositionDepartment.Text = positionToEdit.PositionDepartment.Name;
         }
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

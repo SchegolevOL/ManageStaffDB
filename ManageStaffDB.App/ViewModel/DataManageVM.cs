@@ -14,11 +14,11 @@ using ManageStaffDB.App.View;
 
 namespace ManageStaffDB.App.ViewModel
 {
-    
+
 
     public class DataManageVM : BaseNotification
     {
-       
+
 
         private List<Department> _allDepartments = DataWorker.GetAllDepartments();
         public List<Department> AllDepartments
@@ -148,35 +148,36 @@ namespace ManageStaffDB.App.ViewModel
             get
             {
                 return addNewUser ?? new RelayCommand(obj =>
-                {
-                    Window wnd = obj as Window;
-                    string resultStr = "";
-                    if (UserName == null || UserName.Replace(" ", "").Length == 0)
                     {
-                        SetRedBlockControll(wnd, "NameBlock");
-                    }
-                    if (UserSurName == null || UserSurName.Replace(" ", "").Length == 0)
-                    {
-                        SetRedBlockControll(wnd, "SurNameBlock");
-                    }
-                    //if (UserPhone == null || UserPhone.Replace(" ", "").Length == 0)
-                    //{
-                    //    SetRedBlockControll(wnd, "SurNameBlock");
-                    //}
-                    if (UserPosition == null)
-                    {
-                        MessageBox.Show("Укажите позицию");
-                    }
-                    else
-                    {
-                        resultStr = DataWorker.CreateUser(UserName, UserSurName, UserPhone, UserPosition);
-                        UpdateAllDataView();
+                        
+                        Window wnd = obj as Window;
+                        string resultStr = "";
+                        if (UserName == null || UserName.Replace(" ", "").Length == 0)
+                        {
+                            SetRedBlockControll(wnd, "NameBlock");
+                        }
+                        if (UserSurName == null || UserSurName.Replace(" ", "").Length == 0)
+                        {
+                            SetRedBlockControll(wnd, "SurNameBlock");
+                        }
+                        //if (UserPhone == null || UserPhone.Replace(" ", "").Length == 0)
+                        //{
+                        //    SetRedBlockControll(wnd, "SurNameBlock");
+                        //}
+                        if (UserPosition == null)
+                        {
+                            MessageBox.Show("Укажите позицию");
+                        }
+                        else
+                        {
+                            resultStr = DataWorker.CreateUser(UserName, UserSurName, UserPhone, UserPosition);
+                            UpdateAllDataView();
 
-                        ShowMessageToUser(resultStr);
-                        SetNullValuesToProperties();
-                        wnd.Close();
+                            ShowMessageToUser(resultStr);
+                            SetNullValuesToProperties();
+                            wnd.Close();
+                        }
                     }
-                }
                 );
             }
         }
@@ -473,15 +474,7 @@ namespace ManageStaffDB.App.ViewModel
             MessageView messageView = new MessageView(message);
             SetCenterPositionAndOpen(messageView);
         }
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(String propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
 
     }
 }

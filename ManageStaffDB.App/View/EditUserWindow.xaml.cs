@@ -29,7 +29,13 @@ namespace ManageStaffDB.App.View
             DataManageVM.UserName = userToEdit.Name;
             DataManageVM.UserSurName = userToEdit.SurName;
             DataManageVM.UserPhone = userToEdit.Phone;
-            //DataManageVM.UserPosition = userToEdit.Position;
+            DataManageVM.UserPosition = userToEdit.Position;
+            
+            EditName.Text = userToEdit.Name;
+            EditSurName.Text = userToEdit.SurName;
+            EditPhone.Text = userToEdit.Phone;
+            EditPosition.Text = userToEdit.UserPosition.Name;
+            
 
         }
         private void PreviewTextInput(object sender, TextCompositionEventArgs e)
